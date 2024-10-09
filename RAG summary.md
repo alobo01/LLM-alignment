@@ -91,11 +91,31 @@ RLHF: Human feedback. Not practical.
 UPRISE: Retrieve prompts from a pool (https://arxiv.org/abs/2303.08518).
 Augmentation-Adapted Retriever/BGM: FineTune a small LM to adapt the query with the retrieve sources.
 
-
-
 ## Generation:
 
+- Context Curation:
+Lost in the middle (forget about the middle of long texts)
+    1. Reranking: LLM, Rules, metrics or Encoder-Decoder
+    2. Context Selection/Compression: LLMLingua (Remove tokens such it is hard to read for humans but easy for LLMs)
+        Training an information extractor: PRCA, RECOMP . \
+        Filter-Reranker: SLM filter LLM Rerank \
+        **Chatlaw**: Ask LLM for Relevance 
+- LLM Fine Tuning: Expensive but promising for adapting Input and Output format.
 
+## Augmentation process
+When we receive a complex query we may need to retrieve more than once. Different approaches illustrated in the Figure:
+![Augmentation process](SeveralRetrieval.png)
+Iterative: :shit:
+Recursive: IRCoT (Complementing CoT on each step), ToC (Same with a tree), 
+Adaptive Retrieval: Self-Rag, FLARE, Graph-Toolformer
+
+
+## Evaluation: !TODO
+
+## Future: 
+- RAG on Long-Context Prompts
+- Misinformation worse than no info (wrong info)
+- Multimodal
 
 [RAGEvolution]: DifferentRags.png
 

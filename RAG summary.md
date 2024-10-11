@@ -1,5 +1,9 @@
 # RAG
 
+General Process:
+
+![OverallProcess](modernRAG.png)
+
 ## Evolution
 ![RAG types][RAGEvolution]
 1. Naive RAG
@@ -39,10 +43,12 @@ Flexible orchestation: FLARE (methods that actively decide when and what to retr
 - Semi-structured: Table (SQL)
 - Structured: Knowledge graph -> Harder but better understanding
 - LLMs-Generated Content: GenRead -> Generate instead of retrieve
+- Database: Key -> Values
 
 ### Data Granularity:
 - Small: Can lose context and semantic meaning.
 - Big: Redundant or not important text that can distract the LLM
+- Entity: Entity as Experts(https://arxiv.org/abs/2004.07202)
 
 ## Indexing:
 
@@ -84,6 +90,9 @@ Context significantly deviates from pre-training corpus: Technical words like le
 Promptagator: LLM as a few-shot query generator to create task-specific retrievers (the queries)
 LLM-Embedder: LLM generates rewards.
 RLHF: Human feedback. Not practical.
+Training Strategies:
+
+![training Strategies](trainingStrategies.png)
 
 
 ### Adapter:
